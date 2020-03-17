@@ -1,0 +1,19 @@
+﻿@using Studentpro.Models
+@model Student
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<fieldset>
+    <legend>Информация о студенте</legend>
+    <div class="display-label"><b>Имя</b></div>
+    <div class="display-field">@Html.DisplayFor(m=>m.Name)</div>
+    <div class="display-label"><b>Фамилия</b></div>
+    <div class="display-field">@Html.DisplayFor(m=>m.Surname)</div>
+    <div class="display-label"><b>Курсы</b></div>
+    <ul>
+        @foreach (Course c in Model.Courses)
+        { <li>@c.Name</li>}
+    </ul>
+</fieldset>
